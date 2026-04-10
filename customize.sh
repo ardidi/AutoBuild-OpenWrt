@@ -12,7 +12,9 @@ sed -i 's/$1$V4UetPzk$CYXluq4wUazHjmCDBCqXF.//g' openwrt/package/lean/default-se
 
 # 3. 徹底解決 Error 255 衝突 (移除原版 dnsmasq)
 # 因為 OpenClaw 和 OpenClash 需要 dnsmasq-full，我們直接刪除源碼中的基礎版
+# 強制刪除衝突源碼
 rm -rf openwrt/package/network/services/dnsmasq
+rm -rf openwrt/package/lean/autosamba
 
 # 4. 更換為 JerryKuKu 的 Argon 主題
 # 先刪除 Lean 內建的舊版 Argon，再複製新版
